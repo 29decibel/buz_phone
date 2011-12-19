@@ -1,5 +1,5 @@
 require('lib/setup')
-
+$ = jQuery
 Spine   = require('spine')
 {Stage} = require('spine.mobile')
 

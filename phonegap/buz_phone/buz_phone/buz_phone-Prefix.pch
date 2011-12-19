@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'buz_phone' target in the 'buz_phone' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
