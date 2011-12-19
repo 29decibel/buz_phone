@@ -12,5 +12,6 @@
     "spine/lib/manager",
     "spine.mobile"
   ],
-  "libs": []
+  "libs": [
+	]
 }
