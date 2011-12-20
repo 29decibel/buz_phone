@@ -11,6 +11,6 @@ class App extends Stage.Global
 		@offer_controller = new OfferController
 
 		Spine.Route.setup(shim:true)
-		@navigate '/offers'
+		@navigate '/offers_list'
 
 module.exports = App

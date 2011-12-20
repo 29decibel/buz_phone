@@ -103,6 +103,10 @@ body.stage > footer {
 .panel > header button:active {
   -webkit-box-shadow: inset 0 -1px 1px rgba(0,0,0,0.30), inset 0 1px 1px 0 rgba(0,0,0,0.60), 0 1px 0 rgba(255,255,255,0.40), inset 0 0 20px rgba(255,255,255,0.20);
 }
+.panel > header button.right {
+  left: auto;
+  right: 0;
+}
 .offer_list .item {
   position: relative;
   width: 95%;
@@ -251,4 +255,10 @@ body.stage > footer {
 }
 .clear {
   clear: both;
+}
+#offers_map {
+  margin: 10px;
+  height: 400px;
+  width: 300px;
+  overflow: hidden;
 }

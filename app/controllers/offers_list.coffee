@@ -2,9 +2,10 @@ Spine            = require('spine')
 {Panel}          = require('spine.mobile')
 Offer         = require('models/offer')
 OfferShow = require('controllers/offer_show')
+OffersMap = require('controllers/offers_map')
 $			= jQuery
 
-class OfferList extends Panel
+class OffersList extends Panel
 	className:'offer_list'
 	title:'Buz Offers'
 
@@ -13,6 +14,7 @@ class OfferList extends Panel
 		@html "<div class='loading'>Loading Offers....</div>"
 		Offer.bind('refresh change', @render)
 		@addButton('Refresh',@refresh)
+		@addButton('Map View',@map_view).addClass('right')
 	events:
 		'tap .item' : 'show_offer'
 
@@ -20,7 +22,8 @@ class OfferList extends Panel
 		offer = $(e.target).closest('.item').item()
 		console.log offer
 		@navigate('/show_offer',offer.id,trans:'right')
-
+	map_view:=>
+		@navigate('/offers_map')
 	render:=>
 		# get items
 		items = Offer.select (item)->
@@ -40,10 +43,12 @@ class OfferList extends Panel
 class OfferController extends Spine.Controller
 	constructor: ->
 		super
-		@list    = new OfferList
+		@offers_list    = new OffersList
 		@offer_show = new OfferShow
+		@offers_map = new OffersMap
 		@routes
-			'/offers': (params)->@list.active(params)
+			'/offers_list': (params)->@offers_list.active(params)
+			'/offers_map': (params)->@offers_map.active(params)
 			'/show_offer/:id' : (params)->@offer_show.active(params)
 		Offer.fetch()
 

@@ -31,7 +31,7 @@ class OfferShow extends Panel
 		@render()
 
 	back:->
-		@navigate('/offers',trans:'left')
+		@navigate('/offers_list',trans:'left')
 
 	render:=>
 		@html require('views/offers/show')(@offer)
