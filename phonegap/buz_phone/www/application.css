@@ -257,8 +257,6 @@ body.stage > footer {
   clear: both;
 }
 #offers_map {
-  margin: 10px;
   height: 400px;
-  width: 300px;
-  overflow: hidden;
+  width: 320px;
 }
