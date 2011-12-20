@@ -4,6 +4,7 @@
 			<%= @name%>
 		</div>
 		<div class='offer_pictures'>
+			<div class='image_loading'>Loading...</div>
 			<img src='<%= @full_url(@offer_pictures[0].url)%>' class='main'>
 			<div class='thumb-pictures'>
 				<% for op in @offer_pictures :%>
@@ -13,7 +14,7 @@
 			<div class='price_info'>
 				<div class='slice original_price'>$<%= @original_price%></div>
 				<div class='slice price'>$<%= @price%></div>
-				<div class='slice off_percent'><%= @off_percent%>%off</div>
+				<div class='slice off_percent'><%= @off_percent%>%<span>Off</span></div>
 			</div>
 		</div>
 		<div class='clear'></div>

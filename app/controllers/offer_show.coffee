@@ -14,7 +14,17 @@ class OfferShow extends Panel
 
 	change_main_pic:(e)=>
 		url = $(e.target).attr('data-full')
-		@$('img.main').attr('src',url)
+		# new image
+		image = new Image()
+		main_image = @$('img.main')
+		img_loading = @$('.image_loading')
+		image.onload = ->
+			main_image.attr('src',url)
+			img_loading.hide()
+		image.src = url
+		# only show the loading sign when the image not load
+		if !image.complete
+			img_loading.show()
 
 	change:(paras)->
 		@offer = Offer.find(paras.id)
