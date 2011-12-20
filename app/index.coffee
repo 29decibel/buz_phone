@@ -3,7 +3,7 @@ $ = jQuery
 Spine   = require('spine')
 {Stage} = require('spine.mobile')
 Offer		= require('models/offer')
-OfferController = require('controllers/offers')
+OfferController = require('controllers/offers_list')
 
 class App extends Stage.Global
 	constructor: ->

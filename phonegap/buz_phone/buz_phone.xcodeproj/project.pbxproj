@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D078814414A07BCE00E70FB6 /* Icon@72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = D078814314A07BCE00E70FB6 /* Icon@72x72.png */; };
 		D0B6FB66149F1A5C00B06A26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B6FB65149F1A5C00B06A26 /* Foundation.framework */; };
 		D0B6FB68149F1A5C00B06A26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B6FB67149F1A5C00B06A26 /* UIKit.framework */; };
 		D0B6FB6A149F1A5C00B06A26 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B6FB69149F1A5C00B06A26 /* CoreGraphics.framework */; };
@@ -27,7 +28,6 @@
 		D0B6FB92149F1A5C00B06A26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0B6FB90149F1A5C00B06A26 /* Localizable.strings */; };
 		D0B6FB95149F1A5C00B06A26 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D0B6FB94149F1A5C00B06A26 /* icon.png */; };
 		D0B6FB97149F1A5C00B06A26 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0B6FB96149F1A5C00B06A26 /* icon@2x.png */; };
-		D0B6FB99149F1A5C00B06A26 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D0B6FB98149F1A5C00B06A26 /* icon-72.png */; };
 		D0B6FB9C149F1A5C00B06A26 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D0B6FB9B149F1A5C00B06A26 /* Default.png */; };
 		D0B6FB9E149F1A5C00B06A26 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0B6FB9D149F1A5C00B06A26 /* Default@2x.png */; };
 		D0B6FBA0149F1A5C00B06A26 /* Capture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D0B6FB9F149F1A5C00B06A26 /* Capture.bundle */; };
@@ -37,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D078814314A07BCE00E70FB6 /* Icon@72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@72x72.png"; path = "Resources/icons/Icon@72x72.png"; sourceTree = "<group>"; };
 		D0B6FB61149F1A5C00B06A26 /* buz_phone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buz_phone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B6FB65149F1A5C00B06A26 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D0B6FB67149F1A5C00B06A26 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -60,7 +61,6 @@
 		D0B6FB91149F1A5C00B06A26 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Resources/es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D0B6FB94149F1A5C00B06A26 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icons/icon.png; sourceTree = "<group>"; };
 		D0B6FB96149F1A5C00B06A26 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/icons/icon@2x.png"; sourceTree = "<group>"; };
-		D0B6FB98149F1A5C00B06A26 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72.png"; path = "Resources/icons/icon-72.png"; sourceTree = "<group>"; };
 		D0B6FB9B149F1A5C00B06A26 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/splash/Default.png; sourceTree = "<group>"; };
 		D0B6FB9D149F1A5C00B06A26 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/splash/Default@2x.png"; sourceTree = "<group>"; };
 		D0B6FB9F149F1A5C00B06A26 /* Capture.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Capture.bundle; path = Resources/Capture.bundle; sourceTree = "<group>"; };
@@ -196,9 +196,9 @@
 		D0B6FB93149F1A5C00B06A26 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				D078814314A07BCE00E70FB6 /* Icon@72x72.png */,
 				D0B6FB94149F1A5C00B06A26 /* icon.png */,
 				D0B6FB96149F1A5C00B06A26 /* icon@2x.png */,
-				D0B6FB98149F1A5C00B06A26 /* icon-72.png */,
 			);
 			name = icons;
 			sourceTree = "<group>";
@@ -236,12 +236,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0B6FBAB149F1A5C00B06A26 /* Build configuration list for PBXNativeTarget "buz_phone" */;
 			buildPhases = (
+				D0B6FB5F149F1A5B00B06A26 /* ShellScript */,
 				D0B6FB5A149F1A5B00B06A26 /* Sources */,
 				D0B6FB5B149F1A5B00B06A26 /* Frameworks */,
 				D0B6FB5C149F1A5B00B06A26 /* Resources */,
 				D0B6FB5D149F1A5B00B06A26 /* Sources */,
 				D0B6FB5E149F1A5B00B06A26 /* Frameworks */,
-				D0B6FB5F149F1A5B00B06A26 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -288,12 +288,12 @@
 				D0B6FB92149F1A5C00B06A26 /* Localizable.strings in Resources */,
 				D0B6FB95149F1A5C00B06A26 /* icon.png in Resources */,
 				D0B6FB97149F1A5C00B06A26 /* icon@2x.png in Resources */,
-				D0B6FB99149F1A5C00B06A26 /* icon-72.png in Resources */,
 				D0B6FB9C149F1A5C00B06A26 /* Default.png in Resources */,
 				D0B6FB9E149F1A5C00B06A26 /* Default@2x.png in Resources */,
 				D0B6FBA0149F1A5C00B06A26 /* Capture.bundle in Resources */,
 				D0B6FBA2149F1A5C00B06A26 /* PhoneGap.plist in Resources */,
 				D0B6FBB0149F1D7000B06A26 /* www in Resources */,
+				D078814414A07BCE00E70FB6 /* Icon@72x72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +467,7 @@
 				D0B6FBAD149F1A5C00B06A26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

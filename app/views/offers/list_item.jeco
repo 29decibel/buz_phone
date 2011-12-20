@@ -1,3 +1,4 @@
 <div class="item">
-  <%= @name %>
+	<img src="<%= @full_url(@landing_picture)%>" class='landing'></img>
+  <div class='name'><%= @name %></div>
 </div>
