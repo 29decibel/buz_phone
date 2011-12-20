@@ -27,10 +27,11 @@ class OfferList extends Panel
 			item.landing_picture?
 		# append wrapper
 		@html ''
-		@append "<div id='offers-wrapper' class='scroll-wrapper'><div class='scroller'></div></div>"
-		@$('#offers-wrapper .scroller').html require('views/offers/list_item')(items)
+		@append "<div id='offers-wrapper' class='scroll-wrapper'><div class='scroller'><div class='real_list'></div></div></div>"
+		@$('#offers-wrapper .scroller .real_list').html require('views/offers/list_item')(items)
 		new_scroll = -> new iScroll('offers-wrapper')
-		setTimeout new_scroll,100
+		setTimeout new_scroll,200
+		#new_scroll()
 
 	refresh:=>
 		@html "<div class='loading'>Loading Offers....</div>"
