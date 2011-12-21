@@ -6,7 +6,7 @@ $			= jQuery
 
 class OffersMap extends Panel
 	className:'offer_map'
-	title:'Offers Map'
+	title:'Offers'
 
 	constructor:->
 		super

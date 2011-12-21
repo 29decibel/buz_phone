@@ -16,6 +16,7 @@
 	<false/>
 	<key>ExternalHosts</key>
 	<array>
+		<string>http://google.com</string>
 		<string>*</string>
 	</array>
 	<key>MediaPlaybackRequiresUserAction</key>
@@ -48,6 +49,8 @@
 		<string>PGNotification</string>
 		<key>com.phonegap.splashscreen</key>
 		<string>PGSplashScreen</string>
+		<key>ChildBrowserCommand</key>
+		<string>ChildBrowserCommand</string>
 	</dict>
 	<key>ShowSplashScreenSpinner</key>
 	<true/>

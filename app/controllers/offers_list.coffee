@@ -7,7 +7,7 @@ $			= jQuery
 
 class OffersList extends Panel
 	className:'offer_list'
-	title:'Offers List'
+	title:'Offers'
 
 	constructor:->
 		super

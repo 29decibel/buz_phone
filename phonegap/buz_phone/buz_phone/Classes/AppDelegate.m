@@ -13,6 +13,7 @@
 	#import "PhoneGapViewController.h"
 #endif
 
+
 @implementation AppDelegate
 
 @synthesize invokeString;
@@ -97,6 +98,7 @@
 {
 	return [ super webView:theWebView shouldStartLoadWithRequest:request navigationType:navigationType ];
 }
+
 
 
 - (BOOL) execute:(InvokedUrlCommand*)command

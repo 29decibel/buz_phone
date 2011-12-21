@@ -36,5 +36,6 @@ class OfferShow extends Panel
 	render:=>
 		@html require('views/offers/show')(@offer)
 		new iScroll('offer_show_wrapper')
+		@setTitle @offer.name
 
 module.exports = OfferShow
