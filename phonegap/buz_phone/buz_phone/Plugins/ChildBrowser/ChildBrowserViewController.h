@@ -12,7 +12,7 @@
 
 
 /*
- *  onChildLocationChanging:newLoc
+ *  onChildLocationChanging:newLoc 
  *  
  *  Discussion:
  *    Invoked when a new page has loaded

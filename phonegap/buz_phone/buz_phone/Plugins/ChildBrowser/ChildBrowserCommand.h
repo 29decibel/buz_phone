@@ -3,7 +3,7 @@
 //
 //
 //  Created by Jesse MacFadyen on 10-05-29.
-//  Copyright 2010 Nitobi. All rights reserved.
+//  Copyright 2010 Nitobi. All rights reserved. 
 //
 
 #import <Foundation/Foundation.h>
