@@ -6,12 +6,13 @@ $			= jQuery
 
 class OffersMap extends Panel
 	className:'offer_map'
-	title:'Buz Offers'
+	title:'Offers Map'
 
 	constructor:->
 		super
 		@html "<div class='loading'>Loading Offers....</div>"
 		Offer.bind('refresh change', @render)
+		@active @refresh
 		@addButton('Refresh',@refresh)
 		@addButton('List View',@list_view).addClass('right')
 
@@ -30,7 +31,10 @@ class OffersMap extends Panel
 		console.log 'nice'
 
 	refresh:=>
-		if @position
+		@log 'see current map view is active'
+		@log @isActive()
+		@log @isActive
+		if @position and @isActive()
 			@html ''
 			@append "<div id='offers_map'></div>"
 			console.log '--------------- position is rendering...........'
@@ -45,10 +49,6 @@ class OffersMap extends Panel
 				map_view.add_pin(offer)
 
 	add_pin:(offer)->
-		console.log 'add pin...'
-		console.log offer
-		console.log offer.store
-		console.log @map
 		myLatlng = new google.maps.LatLng(offer.store.latitude,offer.store.longitude)
 		#infowindow = new google.maps.InfoWindow({maxWidth:50,pixelOffset:{width:4,height:3},content: this})
 		icon = 'http://www.google.com/intl/en_us/mapfiles/ms/micons/green-dot.png'

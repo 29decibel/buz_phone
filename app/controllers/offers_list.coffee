@@ -7,7 +7,7 @@ $			= jQuery
 
 class OffersList extends Panel
 	className:'offer_list'
-	title:'Buz Offers'
+	title:'Offers List'
 
 	constructor:->
 		super
@@ -29,12 +29,11 @@ class OffersList extends Panel
 		items = Offer.select (item)->
 			item.landing_picture?
 		# append wrapper
-		@html ''
-		@append "<div id='offers-wrapper' class='scroll-wrapper'><div class='scroller'><div class='real_list'></div></div></div>"
-		@$('#offers-wrapper .scroller .real_list').html require('views/offers/list_item')(items)
+		@html "<div id='offers-wrapper' class='scroll-wrapper'><div class='scroller'></div></div>"
+		@$('#offers-wrapper .scroller').html require('views/offers/list_item')(items)
 		new_scroll = -> new iScroll('offers-wrapper')
-		setTimeout new_scroll,200
-		#new_scroll()
+		window.addEventListener('load', setTimeout(new_scroll, 200), false)
+
 
 	refresh:=>
 		@html "<div class='loading'>Loading Offers....</div>"
