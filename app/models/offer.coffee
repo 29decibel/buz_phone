@@ -9,5 +9,10 @@ class Offer extends Spine.Model
 
 	full_url:(url)->
 		"#{config.host}#{url}"
+	distance:(pos)->
+		console.log 'begin calculating dis'
+		console.log pos
+		console.log @store
+		(distance(@store.latitude,pos.latitude,@store.longitude-pos.longitude)/1000).toFixed(2)
 
 module.exports = Offer

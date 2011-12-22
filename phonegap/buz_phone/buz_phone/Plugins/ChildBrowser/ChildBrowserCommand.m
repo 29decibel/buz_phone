@@ -74,6 +74,18 @@
 
 }
 
+-(void) onStartLoad:(NSString*)newLoc
+{
+	NSString* tempLoc = [NSString stringWithFormat:@"%@",newLoc];
+	NSString* encUrl = [tempLoc stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+	NSString* jsCallback = [NSString stringWithFormat:@"ChildBrowser._onStartLoad('%@');",encUrl];
+	[self.webView stringByEvaluatingJavaScriptFromString:jsCallback];
+    
+}
+
+
+
 
 
 

@@ -256,5 +256,15 @@
 
 }
 
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    
+    if(delegate != NULL)
+	{
+		[delegate onStartLoad:request.URL.absoluteString];		
+	}
+    return true;
+}
+
+
 
 @end

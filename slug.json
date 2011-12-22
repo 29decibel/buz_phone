@@ -15,6 +15,7 @@
   "libs": [
 		"./lib/iscroll.js",
 		"./lib/phonegap-1.2.0.js",
-		"./lib/ChildBrowser.js"
+		"./lib/ChildBrowser.js",
+		"./lib/distance.js"
 		]
 }

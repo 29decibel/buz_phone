@@ -26,5 +26,7 @@
 
 - (void) showWebPage:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 -(void) onChildLocationChange:(NSString*)newLoc;
+- (void) onStartLoad:(NSString*)newLoc;
+
 
 @end

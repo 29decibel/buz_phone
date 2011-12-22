@@ -3,6 +3,7 @@ Spine            = require('spine')
 Offer         = require('models/offer')
 OfferShow = require('controllers/offer_show')
 OffersMap = require('controllers/offers_map')
+config = require('lib/config')
 $			= jQuery
 
 class OffersList extends Panel
@@ -33,11 +34,20 @@ class OffersList extends Panel
 		@$('#offers-wrapper .scroller').html require('views/offers/list_item')(items)
 		new_scroll = -> new iScroll('offers-wrapper')
 		window.addEventListener('load', setTimeout(new_scroll, 200), false)
-
+		# get location and add location infos
+		onError = (msg)->
+			console.log 'can not get the location'
+		navigator.geolocation.getCurrentPosition(@add_distance_info, onError)
 
 	refresh:=>
 		@html "<div class='loading'>Loading Offers....</div>"
 		Offer.fetch()
+	add_distance_info:(position)=>
+		config.position = position.coords
+		Offer.each (offer)->
+			dis = offer.distance(position.coords)
+			console.log "distance is #{dis}"
+			$(".item[data-id=offer_item_#{offer.id}] .distance").html("#{dis} km")
 
 class OfferController extends Spine.Controller
 	constructor: ->

@@ -20,6 +20,8 @@
 -(void) onChildLocationChange:(NSString*)newLoc;
 -(void) onOpenInSafari;
 -(void) onClose;
+- (void) onStartLoad:(NSString*)newLoc;
+
 @end
 
 

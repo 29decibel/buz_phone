@@ -12,29 +12,16 @@ class OffersMap extends Panel
 		super
 		@html "<div class='loading'>Loading Offers....</div>"
 		Offer.bind('refresh change', @render)
-		@active @refresh
-		@addButton('Refresh',@refresh)
+		@active @render
+		@addButton('Refresh',@render)
 		@addButton('List View',@list_view).addClass('right')
 
 	list_view:=>
 		@navigate('/offers_list')
-	render:=>
-		@html 'here is the map view'
-		map_view = this
-		onSuccess=(position)->
-			map_view.position = position
-			map_view.refresh(position)
-		onError = (msg)->
-			console.log 'can not get the location'
-		navigator.geolocation.getCurrentPosition(onSuccess, onError)
-	add_point:=>
-		console.log 'nice'
 
-	refresh:=>
+	render:=>
 		@log 'see current map view is active'
-		@log @isActive()
-		@log @isActive
-		if @position and @isActive()
+		if @isActive()
 			@html ''
 			@append "<div id='offers_map'></div>"
 			console.log '--------------- position is rendering...........'
