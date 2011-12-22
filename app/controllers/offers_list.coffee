@@ -1,10 +1,6 @@
 Spine            = require('spine')
 {Panel}          = require('spine.mobile')
 Offer         = require('models/offer')
-OfferShow = require('controllers/offer_show')
-OffersMap = require('controllers/offers_map')
-Orders = require('controllers/orders')
-Rewards = require('controllers/rewards')
 config = require('lib/config')
 $			= jQuery
 
@@ -56,20 +52,4 @@ class OffersList extends Panel
 			console.log "distance is #{dis}"
 			$(".item[data-id=offer_item_#{offer.id}] .distance").html("#{dis} km")
 
-class OfferController extends Spine.Controller
-	constructor: ->
-		super
-		@offers_list    = new OffersList
-		@offer_show = new OfferShow
-		@offers_map = new OffersMap
-		@orders = new Orders
-		@rewards = new Rewards
-		@routes
-			'/offers_list': (params)->@offers_list.active(params)
-			'/offers_map': (params)->@offers_map.active(params)
-			'/show_offer/:id' : (params)->@offer_show.active(params)
-			'/orders' : (params)->@orders.active(params)
-			'/rewards' : (params)->@rewards.active(params)
-		#Offer.fetch()
-
-module.exports = OfferController
+module.exports = OffersList

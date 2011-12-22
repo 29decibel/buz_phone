@@ -1,28 +1,62 @@
 Spine            = require('spine')
 {Panel}          = require('spine.mobile')
 Order         = require('models/order')
+config = require('lib/config')
 $			= jQuery
 
 class Orders extends Panel
 	className:'orders'
 	title:'Purchases'
+	events:
+		'tap .buz_login' : 'login'
 	constructor:->
 		super
-		@html "<div class='loading'>Loading Your Purchases Infos....</div>"
 		Order.bind('refresh change',@render)
+		@addButton('Refresh',@refresh)
 		@active @render
 	render:=>
 		@log 'render orders list'
 		if Order.count()==0
+			@html "<div class='loading'>Loading Your Purchases Infos....</div>"
 			Order.fetch({error:@render_login})
 		else
 			@html "<div id='orders-wrapper' class='scroll-wrapper'><div class='scroller'></div></div>"
 			@$("#orders-wrapper .scroller").html require('views/orders/list_item')(Order.all())
 			new iScroll('orders-wrapper')
+	refresh:=>
+		@html "<div class='loading'>Loading Purchases....</div>"
+		Order.fetch()
+
+	onLocationChange:(loc)=>
+		@log loc
+	onClose:=>
+		@log 'close'
+		if @logged_in
+			@render()
+	onOpenExternal:=>
+		@log 'open external'
+	onStartLoad:(loc)=>
+		@log "start loading #{loc}"
+		if loc=='fbconnect://success'
+			window.plugins.childBrowser.close()
+			@logged_in = true
+	login:=>
+		@log "got login events"
+		console.log "test log ..."
+		if !@cb?
+			@cb = ChildBrowser.install()
+		@cb.onLocationChange = @onLocationChange
+		@cb.onClose =@onClose
+		@cb.onOpenExternal = @onOpenExternal
+		@cb.onStartLoad = @onStartLoad
+		device_info = config.device()
+		login_url = "#{config.host}/auth/facebook?origin=mobile_app_#{device_info.id},#{device_info.name},#{device_info.platform}"
+		console.log "begin show login page..."
+		window.plugins.childBrowser.showWebPage(login_url)
+
 	render_login:=>
-		@html 'You should login first'
+		@html "<div class='login_info'><button class='buz_login'>Login Facebook</button></div>"
+
 
 
 module.exports = Orders
-			
-		
