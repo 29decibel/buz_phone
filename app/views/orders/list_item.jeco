@@ -1,0 +1,4 @@
+<div class="order_item" data-id='order_item_<%= @id%>'>
+	<div class='offer'><%= @offer%></div>
+	<div class='price'><%= @price%></div>
+</div>

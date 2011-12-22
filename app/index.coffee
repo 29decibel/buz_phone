@@ -14,9 +14,11 @@ class App extends Stage.Global
 		Spine.Route.setup(shim:true)
 		@navigate '/offers_list'
 		$('.stage>footer').append("<button class='login'>Login</button>")
+		$('.stage>footer').append("<button class='orders'>Purchases</button>")
 		#@change_count = 0
 	events:
 		'tap .login' : 'login'
+		'tap .orders' : 'orders'
 	onLocationChange:(loc)=>
 		@log loc
 	onClose:=>
@@ -27,6 +29,8 @@ class App extends Stage.Global
 		@log "start loading #{loc}"
 		if loc=='fbconnect://success'
 			window.plugins.childBrowser.close()
+	orders:->
+		@navigate('/orders')
 	login:=>
 		cb = ChildBrowser.install()
 		@log cb
@@ -35,9 +39,8 @@ class App extends Stage.Global
 			cb.onClose =@onClose
 			cb.onOpenExternal = @onOpenExternal
 			cb.onStartLoad = @onStartLoad
-			#cb.showWebPage("http://google.com")
-			window.plugins.childBrowser.showWebPage("#{config.host}/auth/facebook?origin=iphone_app")
-			#window.plugins.childBrowser.close()
-			#ChildBrowser.showWebPage("http://google.com")
+			device_info = config.device()
+			login_url = "#{config.host}/auth/facebook?origin=mobile_app_#{device_info.id},#{device_info.name},#{device_info.platform}"
+			window.plugins.childBrowser.showWebPage(login_url)
 
 module.exports = App

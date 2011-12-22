@@ -260,6 +260,7 @@
     
     if(delegate != NULL)
 	{
+        NSLog(@"--- begin load url : %@",request.URL.absoluteString);
 		[delegate onStartLoad:request.URL.absoluteString];		
 	}
     return true;

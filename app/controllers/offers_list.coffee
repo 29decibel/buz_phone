@@ -3,6 +3,7 @@ Spine            = require('spine')
 Offer         = require('models/offer')
 OfferShow = require('controllers/offer_show')
 OffersMap = require('controllers/offers_map')
+Orders = require('controllers/orders')
 config = require('lib/config')
 $			= jQuery
 
@@ -42,6 +43,7 @@ class OffersList extends Panel
 	refresh:=>
 		@html "<div class='loading'>Loading Offers....</div>"
 		Offer.fetch()
+
 	add_distance_info:(position)=>
 		config.position = position.coords
 		Offer.each (offer)->
@@ -55,10 +57,12 @@ class OfferController extends Spine.Controller
 		@offers_list    = new OffersList
 		@offer_show = new OfferShow
 		@offers_map = new OffersMap
+		@orders = new Orders
 		@routes
 			'/offers_list': (params)->@offers_list.active(params)
 			'/offers_map': (params)->@offers_map.active(params)
 			'/show_offer/:id' : (params)->@offer_show.active(params)
+			'/orders' : (params)->@orders.active(params)
 		Offer.fetch()
 
 module.exports = OfferController
