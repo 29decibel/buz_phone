@@ -34,6 +34,9 @@ class OfferShow extends Panel
 		@navigate('/offers_list',trans:'left')
 
 	render:=>
+		if @isActive()
+			$('.stage>footer .buttons .btn').removeClass('active')
+			$('.stage>footer .buttons .offers').addClass('active')
 		@html require('views/offers/show')(@offer)
 		new iScroll('offer_show_wrapper')
 

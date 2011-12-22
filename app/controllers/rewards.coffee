@@ -15,6 +15,9 @@ class Rewards extends Panel
 		@addButton('Refresh',@refresh)
 		@active @render
 	render:=>
+		if @isActive()
+			$('.stage>footer .buttons .btn').removeClass('active')
+			$('.stage>footer .buttons .rewards').addClass('active')
 		@log 'render orders list'
 		if Reward.count()==0
 			@html "<div class='empty_info'>You have no rewards</div>"

@@ -15,6 +15,9 @@ class Orders extends Panel
 		@addButton('Refresh',@refresh)
 		@active @render
 	render:=>
+		if @isActive()
+			$('.stage>footer .buttons .btn').removeClass('active')
+			$('.stage>footer .buttons .orders').addClass('active')
 		@log 'render orders list'
 		if Order.count()==0
 			@html "<div class='empty_info'>You have no purchases.</div>"

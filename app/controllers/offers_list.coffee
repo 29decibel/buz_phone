@@ -24,6 +24,9 @@ class OffersList extends Panel
 	map_view:=>
 		@navigate('/offers_map')
 	render:=>
+		if @isActive()
+			$('.stage>footer .buttons .btn').removeClass('active')
+			$('.stage>footer .buttons .offers').addClass('active')
 		return if @redered==true
 		if Offer.count()==0
 			@html "<div class='loading'>Loading Offers....</div>"

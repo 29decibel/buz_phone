@@ -20,6 +20,9 @@ class OffersMap extends Panel
 		@navigate('/offers_list')
 
 	render:=>
+		if @isActive()
+			$('.stage>footer .buttons .btn').removeClass('active')
+			$('.stage>footer .buttons .offers').addClass('active')
 		@log 'see current map view is active'
 		if @isActive()
 			@html ''

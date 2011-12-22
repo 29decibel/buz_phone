@@ -12,9 +12,10 @@ class App extends Stage.Global
 
 		Spine.Route.setup(shim:true)
 		@navigate '/offers_list'
-		$('.stage>footer').append("<button class='offers'>Offers</button>")
-		$('.stage>footer').append("<button class='orders'>Purchases</button>")
-		$('.stage>footer').append("<button class='rewards'>Rewards</button>")
+		$('.stage>footer').append("<div class='buttons'></div>")
+		$('.stage>footer .buttons').append("<button class='offers btn'>Offers</button>")
+		$('.stage>footer .buttons').append("<button class='orders btn'>Purchases</button>")
+		$('.stage>footer .buttons').append("<button class='rewards btn'>Rewards</button>")
 		#@change_count = 0
 	events:
 		'tap .orders' : 'orders'
