@@ -17,23 +17,24 @@ class Rewards extends Panel
 	render:=>
 		@log 'render orders list'
 		if Reward.count()==0
-			@html "<div class='loading'>Loading Your Rewards ....</div>"
-			Reward.fetch({error:@render_login})
-			#@render_login()
+			@html "<div class='empty_info'>You have no rewards</div>"
+			if !@loaded?
+				@refresh()
 		else
 			@html "<div id='rewards-wrapper' class='scroll-wrapper'><div class='scroller'></div></div>"
 			@$("#rewards-wrapper .scroller").html require('views/rewards/list_item')(Reward.all())
 			new iScroll('rewards-wrapper')
 	refresh:=>
+		@loaded = true
 		@html "<div class='loading'>Loading Rewards....</div>"
-		Reward.fetch()
+		Reward.fetch({error:@render_login})
 
 	onLocationChange:(loc)=>
 		@log loc
 	onClose:=>
 		@log 'close'
 		if @logged_in
-			@render()
+			@refresh()
 	onOpenExternal:=>
 		@log 'open external'
 	onStartLoad:(loc)=>

@@ -17,22 +17,24 @@ class Orders extends Panel
 	render:=>
 		@log 'render orders list'
 		if Order.count()==0
-			@html "<div class='loading'>Loading Your Purchases Infos....</div>"
-			Order.fetch({error:@render_login})
+			@html "<div class='empty_info'>You have no purchases.</div>"
+			if !@loaded?
+				@refresh()
 		else
 			@html "<div id='orders-wrapper' class='scroll-wrapper'><div class='scroller'></div></div>"
 			@$("#orders-wrapper .scroller").html require('views/orders/list_item')(Order.all())
 			new iScroll('orders-wrapper')
 	refresh:=>
+		@loaded = true
 		@html "<div class='loading'>Loading Purchases....</div>"
-		Order.fetch()
+		Order.fetch({error:@render_login})
 
 	onLocationChange:(loc)=>
 		@log loc
 	onClose:=>
 		@log 'close'
 		if @logged_in
-			@render()
+			@refresh()
 	onOpenExternal:=>
 		@log 'open external'
 	onStartLoad:(loc)=>
