@@ -12,7 +12,7 @@ class App extends Stage.Global
 		@offer_controller = new OfferController
 
 		Spine.Route.setup(shim:true)
-		@navigate '/offers_list'
+		@navigate '/rewards'
 		$('.stage>footer').append("<button class='login'>Login</button>")
 		$('.stage>footer').append("<button class='orders'>Purchases</button>")
 		#@change_count = 0

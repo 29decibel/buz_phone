@@ -272,3 +272,82 @@ body.stage > footer {
   height: 400px;
   width: 320px;
 }
+.order_item {
+  padding: 5px 10px;
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.40);
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.40);
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.40);
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+.order_item .offer_picture {
+  float: left;
+  margin-top: 10px;
+  width: 100px;
+  height: 65px;
+  -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.30);
+  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.30);
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.30);
+}
+.order_item .offer {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 3px;
+}
+.order_item .price {
+  margin-top: 10px;
+}
+.order_item .info {
+  margin-left: 120px;
+  margin-bottom: 5px;
+}
+.order_item .info label {
+  display: inline-block;
+  width: 70px;
+}
+.reward_item {
+  padding: 5px 10px;
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.40);
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.40);
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.40);
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+.reward_item .reward_picture {
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 65px;
+  -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.30);
+  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.30);
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.30);
+}
+.reward_item .name {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 3px;
+}
+.reward_item .redeemed {
+  color: #fff;
+  padding: 5px 20px;
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.30);
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.30);
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.30);
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.reward_item .redeemed.true {
+  background-color: #008000;
+}
+.reward_item .redeemed.false {
+  background-color: #eb6d38;
+}
+.reward_item .checkin_times {
+  margin-left: 120px;
+  margin-bottom: 5px;
+}
+.reward_item .checkin_times label {
+  display: inline-block;
+  width: 90px;
+}

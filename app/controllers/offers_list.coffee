@@ -4,6 +4,7 @@ Offer         = require('models/offer')
 OfferShow = require('controllers/offer_show')
 OffersMap = require('controllers/offers_map')
 Orders = require('controllers/orders')
+Rewards = require('controllers/rewards')
 config = require('lib/config')
 $			= jQuery
 
@@ -58,11 +59,13 @@ class OfferController extends Spine.Controller
 		@offer_show = new OfferShow
 		@offers_map = new OffersMap
 		@orders = new Orders
+		@rewards = new Rewards
 		@routes
 			'/offers_list': (params)->@offers_list.active(params)
 			'/offers_map': (params)->@offers_map.active(params)
 			'/show_offer/:id' : (params)->@offer_show.active(params)
 			'/orders' : (params)->@orders.active(params)
-		Offer.fetch()
+			'/rewards' : (params)->@rewards.active(params)
+		#Offer.fetch()
 
 module.exports = OfferController

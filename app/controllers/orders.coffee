@@ -13,13 +13,14 @@ class Orders extends Panel
 		@active @render
 	render:=>
 		@log 'render orders list'
-		window.order = Order
 		if Order.count()==0
 			Order.fetch({error:@render_login})
 		else
 			@html require('views/orders/list_item')(Order.all())
 	render_login:=>
 		@html 'You should login first'
+
+
 module.exports = Orders
 			
 		

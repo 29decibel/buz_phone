@@ -1,4 +1,8 @@
 <div class="order_item" data-id='order_item_<%= @id%>'>
-	<div class='offer'><%= @offer%></div>
-	<div class='price'><%= @price%></div>
+	<div class='offer '><%= @offer%></div>
+	<img src="<%= @full_url(@offer_picture) %>" class='offer_picture'></img>
+	<div class='price info'><label>Price</label>$<%= @price%></div>
+	<div class='quantity info'><label>Quantity</label><%= @quantity%></div>
+	<div class='amount info'><label>Amount</label>$<%= @amount%></div>
+	<div class='clear'></div>
 </div>
