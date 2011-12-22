@@ -16,7 +16,9 @@ class Orders extends Panel
 		if Order.count()==0
 			Order.fetch({error:@render_login})
 		else
-			@html require('views/orders/list_item')(Order.all())
+			@html "<div id='orders-wrapper' class='scroll-wrapper'><div class='scroller'></div></div>"
+			@$("#orders-wrapper .scroller").html require('views/orders/list_item')(Order.all())
+			new iScroll('orders-wrapper')
 	render_login:=>
 		@html 'You should login first'
 

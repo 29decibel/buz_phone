@@ -14,8 +14,8 @@ class OffersList extends Panel
 
 	constructor:->
 		super
-		@html "<div class='loading'>Loading Offers....</div>"
 		Offer.bind('refresh change', @render)
+		@active @render
 		@addButton('Refresh',@refresh)
 		@addButton('Map View',@map_view).addClass('right')
 	events:
@@ -28,18 +28,22 @@ class OffersList extends Panel
 	map_view:=>
 		@navigate('/offers_map')
 	render:=>
-		# get items
-		items = Offer.select (item)->
-			item.landing_picture?
-		# append wrapper
-		@html "<div id='offers-wrapper' class='scroll-wrapper'><div class='scroller'></div></div>"
-		@$('#offers-wrapper .scroller').html require('views/offers/list_item')(items)
-		new_scroll = -> new iScroll('offers-wrapper')
-		window.addEventListener('load', setTimeout(new_scroll, 200), false)
-		# get location and add location infos
-		onError = (msg)->
-			console.log 'can not get the location'
-		navigator.geolocation.getCurrentPosition(@add_distance_info, onError)
+		if Offer.count()==0
+			@html "<div class='loading'>Loading Offers....</div>"
+			Offer.fetch()
+		else
+			# get items
+			items = Offer.select (item)->
+				item.landing_picture?
+			# append wrapper
+			@html "<div id='offers-wrapper' class='scroll-wrapper'><div class='scroller'></div></div>"
+			@$('#offers-wrapper .scroller').html require('views/offers/list_item')(items)
+			new_scroll = -> new iScroll('offers-wrapper')
+			window.addEventListener('load', setTimeout(new_scroll, 200), false)
+			# get location and add location infos
+			onError = (msg)->
+				console.log 'can not get the location'
+			navigator.geolocation.getCurrentPosition(@add_distance_info, onError)
 
 	refresh:=>
 		@html "<div class='loading'>Loading Offers....</div>"

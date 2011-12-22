@@ -14,11 +14,15 @@ class App extends Stage.Global
 		Spine.Route.setup(shim:true)
 		@navigate '/rewards'
 		$('.stage>footer').append("<button class='login'>Login</button>")
+		$('.stage>footer').append("<button class='offers'>Offers</button>")
 		$('.stage>footer').append("<button class='orders'>Purchases</button>")
+		$('.stage>footer').append("<button class='rewards'>Rewards</button>")
 		#@change_count = 0
 	events:
 		'tap .login' : 'login'
 		'tap .orders' : 'orders'
+		'tap .rewards' : 'rewards'
+		'tap .offers' : 'offers'
 	onLocationChange:(loc)=>
 		@log loc
 	onClose:=>
@@ -31,6 +35,10 @@ class App extends Stage.Global
 			window.plugins.childBrowser.close()
 	orders:->
 		@navigate('/orders')
+	rewards:->
+		@navigate('/rewards')
+	offers:->
+		@navigate('/offers_list')
 	login:=>
 		cb = ChildBrowser.install()
 		@log cb
