@@ -24,6 +24,7 @@ class OffersList extends Panel
 	map_view:=>
 		@navigate('/offers_map')
 	render:=>
+		return if @redered==true
 		if Offer.count()==0
 			@html "<div class='loading'>Loading Offers....</div>"
 			Offer.fetch()
@@ -35,14 +36,17 @@ class OffersList extends Panel
 			@html "<div id='offers-wrapper' class='scroll-wrapper'><div class='scroller'></div></div>"
 			@$('#offers-wrapper .scroller').html require('views/offers/list_item')(items)
 			new_scroll = -> new iScroll('offers-wrapper')
-			window.addEventListener('load', setTimeout(new_scroll, 200), false)
+			#window.addEventListener('load', setTimeout(new_scroll, 200), false)
+			new_scroll()
 			# get location and add location infos
 			onError = (msg)->
 				console.log 'can not get the location'
 			navigator.geolocation.getCurrentPosition(@add_distance_info, onError)
+			@redered = true
 
 	refresh:=>
 		@html "<div class='loading'>Loading Offers....</div>"
+		@redered = false
 		Offer.fetch()
 
 	add_distance_info:(position)=>
