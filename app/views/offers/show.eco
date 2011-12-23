@@ -11,13 +11,18 @@
 					<img src='<%= @full_url(op.thumb)%>' data-full='<%= @full_url(op.url)%>' class='thumb'></img>
 				<% end %>
 			</div>
-			<div class='price_info'>
-				<div class='slice original_price'>$<%= @original_price%></div>
-				<div class='slice price'>$<%= @price%></div>
-				<div class='slice off_percent'><%= @off_percent%>%<span>Off</span></div>
-			</div>
+			<% if @offer_type=='normal' and @off_percent!=0 :%>
+				<div class='price_info'>
+					<div class='slice original_price'>$<%= @original_price%></div>
+					<div class='slice price'>$<%= @price%></div>
+					<div class='slice off_percent'><%= @off_percent%>%<span>Off</span></div>
+				</div>
+			<% end %>
 		</div>
 		<div class='clear'></div>
+		<div class='offer_actions'>
+			<button class='checkin'>Checkin Here!</button>
+		</div>
 		<% if @details? and @details!='' :%>
 			<div class='details'>
 				<div class='title'>DETAILS</div>
@@ -30,8 +35,11 @@
 				<%- @description%>
 			</div>
 		<% end %>
+		<div class='map'>
+			<div class='title'>LOCATION</div>
+			<img src='<%= @map_url()%>'></img>
+		</div>
 		<div class='store_info'></div>
-		<div class='map'></div>
 	</div>
 </div>
 

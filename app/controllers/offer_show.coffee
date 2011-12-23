@@ -11,6 +11,7 @@ class OfferShow extends Panel
 		@addButton 'Back',@back
 	events:
 		'tap img.thumb' : 'change_main_pic'
+		'click .checkin' : 'checkin'
 
 	change_main_pic:(e)=>
 		url = $(e.target).attr('data-full')
@@ -29,6 +30,8 @@ class OfferShow extends Panel
 	change:(paras)->
 		@offer = Offer.find(paras.id)
 		@render()
+	checkin:->
+		alert 'sorry you must near the store so you can checkin'
 
 	back:->
 		@navigate('/offers_list',trans:'left')

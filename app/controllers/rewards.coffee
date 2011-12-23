@@ -55,7 +55,7 @@ class Rewards extends Panel
 		@cb.onOpenExternal = @onOpenExternal
 		@cb.onStartLoad = @onStartLoad
 		device_info = config.device()
-		login_url = "#{config.host}/auth/facebook?origin=mobile_app_#{device_info.id},#{device_info.name},#{device_info.platform}"
+		login_url = "#{config.host}/auth/facebook?origin=mobile_app_#{device_info.id},#{device_info.name},#{device_info.platform}&display=touch"
 		console.log "begin show login page..."
 		window.plugins.childBrowser.showWebPage(login_url)
 

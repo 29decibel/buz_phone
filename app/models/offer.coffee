@@ -14,5 +14,7 @@ class Offer extends Spine.Model
 		console.log pos
 		console.log @store
 		(distance(@store.latitude,pos.latitude,@store.longitude-pos.longitude)/1000).toFixed(2)
+	map_url:->
+		"http://maps.google.com/maps/api/staticmap?center=#{@store.latitude},#{@store.longitude}&zoom=12&size=280x260&sensor=false&markers=color:red|label:D|#{@store.latitude},#{@store.longitude}"
 
 module.exports = Offer

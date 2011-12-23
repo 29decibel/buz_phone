@@ -14,18 +14,21 @@
       box-shadow:0px 0px 5px rgba(0,0,0,0.4)
     img
       width:100%
-      box-shadow:0px 0px 10px rgba(0,0,0,0.5)
+      box-shadow:0px 0px 10px rgba(0,0,0,1)
     .name
       position:absolute
       text-align:left
       font-size:14px
+      font-family: 'Abel', sans-serif
+      font-size:18px
       left:10px
       top:10px
       width:200px
       color:white
-      text-shadow:0px 0px 3px rgba(0,0,0,0.3)
 .loading
-  margin:50px 20px
+  margin:50px 15%
+  position:absolute
+  width:70%
   text-align:center
   border-radius:10px 10px 10px
   box-shadow:0px 0px 5px rgba(0,0,0,0.3)
@@ -49,10 +52,12 @@
     text-shadow:0px 0px 2px rgba(0,0,0,0.3)
   .name
     text-align:left
+    font-family: 'Abel',sans-serif
     margin:10px
+    font-size:18px
     padding-bottom:5px
     border-bottom:1px solid #ccc
-    text-shadow:3px 3px 3px rgba(0,0,0,0.6)
+    text-shadow:0px 0px 2px rgba(0,0,0,0.3)
   .details
     position:relative;
     font-size:13px
@@ -69,6 +74,18 @@
     text-align:left
     background:rgba(255,255,255,0.3)
     box-shadow:0px 0px 3px rgba(0,0,0,0.3)
+  .map
+    position:relative;
+    font-size:13px
+    padding:40px 10px 10px 10px
+    margin:10px
+    text-align:left
+    background:rgba(255,255,255,0.3)
+    box-shadow:0px 0px 3px rgba(0,0,0,0.3)
+    img
+      width:280px
+      height:260px
+      box-shadow:0px 0px 7px rgba(0,0,0,0.3)
   .offer_pictures
     margin-left:10px
     float:left
@@ -91,13 +108,13 @@
         min-width:50px
         background:rgba(255,255,255,0.6)
         box-shadow:0px 0px 5px rgba(0,0,0,0.5)
-        text-shadow:rgba(0,0,0,0.6)
         padding:10px
         color:#333
         float:right
         clear:right
         font-size:18px
         margin-top:5px
+        font-family: 'Abel', sans-serif
         span
           font-size:14px
         &.original_price
@@ -182,8 +199,9 @@
        display:inline-block
        width:90px
 .login_info
-  width:100%
-  margin-top:20px
+  position:absolute
+  width:70%
+  margin:50px 15%
   text-align:center
   .buz_login
     border:none
@@ -196,8 +214,10 @@
     background-color:#314F85
 
 .empty_info
+  position:absolute
+  width:70%
   padding:30px 10px
-  margin:20px
+  margin:50px 15%
   text-align:center
   font-size:18px
   box-shadow:0px 0px 15px rgba(0,0,0,0.3)
@@ -219,3 +239,20 @@
     &.active
       -webkit-box-shadow:inset 0 -1px 1px rgba(0,0,0,0.30), inset 0 1px 1px 0 rgba(0,0,0,0.60), 0 1px 0 rgba(255,255,255,0.40)
       background-color:rgba(0,0,0,0.3)
+
+.offer_actions
+  padding:10px
+  margin:10px
+  border-radius:5px 5px 5px
+  border:1px solid #ccc
+  box-shadow:0px 0px 5px rgba(0,0,0,0.3)
+  .checkin
+    border:none
+    box-shadow:0px 0px 15px rgba(0,0,0,0.3)
+    text-shadow:0px 0px 3px rgba(0,0,0,0.3)
+    color:white
+    border-radius:5px 5px 5px
+    padding:7px 30px
+    font-size:20px
+    background-color:#314F85
+
