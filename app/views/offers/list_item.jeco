@@ -1,5 +1,5 @@
 <div class="item" data-id='offer_item_<%= @id%>'>
-	<img src="<%= @full_url(@landing_picture)%>" class='landing'></img>
+	<img src="<%= @full_url(@landing_picture)%>" alt='images/offer_list_item_ph.png' class='landing'></img>
   <div class='name'><%= @name %></div>
 	<div class='distance'>Loading...</div>
 </div>

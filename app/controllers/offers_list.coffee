@@ -42,7 +42,10 @@ class OffersList extends Panel
 			#window.addEventListener('load', setTimeout(new_scroll, 200), false)
 			new_scroll()
 			# get location and add location infos
-			document.addEventListener "deviceready",@fetch_location_infos,false
+			if PhoneGap.available
+				@fetch_location_infos()
+			else
+				document.addEventListener "deviceready",@fetch_location_infos,false
 			@redered = true
 
 	fetch_location_infos:=>
