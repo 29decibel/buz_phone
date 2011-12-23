@@ -42,11 +42,13 @@ class OffersList extends Panel
 			#window.addEventListener('load', setTimeout(new_scroll, 200), false)
 			new_scroll()
 			# get location and add location infos
-			onError = (msg)->
-				console.log 'can not get the location'
-			navigator.geolocation.getCurrentPosition(@add_distance_info, onError)
+			document.addEventListener "deviceready",@fetch_location_infos,false
 			@redered = true
 
+	fetch_location_infos:=>
+		navigator.geolocation.getCurrentPosition(@add_distance_info, @fetch_location_error)
+	fetch_location_error:=>
+		console.log 'can not get the location'
 	refresh:=>
 		@html "<div class='loading'>Loading Offers....</div>"
 		@redered = false
