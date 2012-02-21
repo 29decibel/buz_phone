@@ -38,6 +38,8 @@
 		D0B6FBA2149F1A5C00B06A26 /* PhoneGap.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0B6FBA1149F1A5C00B06A26 /* PhoneGap.plist */; };
 		D0B6FBA6149F1A5C00B06A26 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B6FBA5149F1A5C00B06A26 /* AppDelegate.m */; };
 		D0B6FBB0149F1D7000B06A26 /* www in Resources */ = {isa = PBXBuildFile; fileRef = D0B6FBAF149F1D7000B06A26 /* www */; };
+		D0BA9AE514ECE37800A06326 /* Icon@72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = D0BA9AE414ECE37800A06326 /* Icon@72x72.png */; };
+		D0BA9AE714ECE49800A06326 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D0BA9AE614ECE49800A06326 /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,8 @@
 		D0B6FBA5149F1A5C00B06A26 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
 		D0B6FBA8149F1A5C00B06A26 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
 		D0B6FBAF149F1D7000B06A26 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		D0BA9AE414ECE37800A06326 /* Icon@72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@72x72.png"; sourceTree = "<group>"; };
+		D0BA9AE614ECE49800A06326 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 		D0B6FB53149F1A5B00B06A26 = {
 			isa = PBXGroup;
 			children = (
+				D0BA9AE614ECE49800A06326 /* Icon.png */,
+				D0BA9AE414ECE37800A06326 /* Icon@72x72.png */,
 				D0B6FBAF149F1D7000B06A26 /* www */,
 				D0B6FB7F149F1A5C00B06A26 /* buz_phone */,
 				D0B6FB64149F1A5C00B06A26 /* Frameworks */,
@@ -321,6 +327,8 @@
 				D078814414A07BCE00E70FB6 /* Icon@72x72.png in Resources */,
 				D02A765F14A1C3C7000FC3E4 /* ChildBrowser.bundle in Resources */,
 				D02A766214A1C3C7000FC3E4 /* ChildBrowserViewController.xib in Resources */,
+				D0BA9AE514ECE37800A06326 /* Icon@72x72.png in Resources */,
+				D0BA9AE714ECE49800A06326 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,9 +402,12 @@
 		D0B6FBA9149F1A5C00B06A26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Lorcan McNeela";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lorcan McNeela";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -405,8 +416,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "49C8809D-29DA-4822-9A76-B18CCFE1FFE0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "49C8809D-29DA-4822-9A76-B18CCFE1FFE0";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -414,16 +425,19 @@
 		D0B6FBAA149F1A5C00B06A26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Lorcan McNeela";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lorcan McNeela";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "49C8809D-29DA-4822-9A76-B18CCFE1FFE0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "49C8809D-29DA-4822-9A76-B18CCFE1FFE0";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -450,7 +464,7 @@
 					/usr/lib/libSystem.B.dylib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -477,7 +491,7 @@
 					/usr/lib/libSystem.B.dylib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

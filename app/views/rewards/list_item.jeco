@@ -1,7 +1,7 @@
 <div class="reward_item" data-id='reward_item_<%= @id%>'>
-	<div class='name'><%= @name%></div>
-	<img src="<%= @full_url(@picture) %>" class='reward_picture'></img>
-	<div class='redeemed <%= @redeemed%>'><%= @state()%></div>
-	<div class='checkin_times'><label>Checkins</label><%= @checkin_times%></div>
-	<div class='clear'></div>
+  <div class='name'><%= @name%></div>
+  <img src="<%= @full_url(@picture) %>" class='reward_picture'></img>
+  <div class='redeemed <%= @redeemed%>'><%= @state()%></div>
+  <div class='checkin_times'><label>Checkins</label><%= @checkin_times%></div>
+  <div class='clear'></div>
 </div>
