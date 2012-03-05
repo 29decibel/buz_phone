@@ -5,11 +5,11 @@
   <title>BuzApp</title>
   <meta name="viewport" content="width=device-width; initial-scale=1.0; minimum-scale=1; maximum-scale=1.0; user-scalable=0;"/>
   <meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="format-detection" content="telephone=no" />
   
   <link rel="stylesheet" href="application.css" type="text/css" charset="utf-8">
-	<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
   <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript" charset="utf-8"></script>
   <script src="application.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript" charset="utf-8">
@@ -18,11 +18,11 @@
     jQuery(function(){
       var App = require("index");
       exports.app = new App({el: $("body")});      
-			console.log('test js console log....');
-			//console.log(iScroll);
-			$('header').live('touchmove',function(e){
-				e.preventDefault();
-			});
+      console.log('test js console log....');
+      //console.log(iScroll);
+      $('header').live('touchmove',function(e){
+        e.preventDefault();
+      });
     });
   </script>
 </head>
