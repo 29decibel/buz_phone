@@ -9,28 +9,45 @@ class Rewards extends Panel
   title:'Rewards'
   events:
     'tap .buz_login' : 'login'
+    'tap .reward_item' : 'shit_show_reward'
   constructor:->
     super
-    Reward.bind('refresh change',@render)
-    @addButton('Refresh',@refresh)
+    Reward.bind('refresh',@render)
+    Reward.bind('refresh',@shit)
+    @active @shit_render
     @active @render
-  render:=>
+    @addButton('Refresh',@refresh)
+  shit:=>
+    @log "shit refresh"
+  shit_render:=>
+    @log "shit render"
+  render:(e)=>
+    @log e
+    @log "#{e} trigger the render event"
+    return if @rendered
     if @isActive()
       $('.stage>footer .buttons .btn').removeClass('active')
       $('.stage>footer .buttons .rewards').addClass('active')
-    @log 'render orders list'
-    if Reward.count()==0
-      @html "<div class='empty_info'>You have no rewards</div>"
-      if !@loaded?
-        @refresh()
-    else
-      @html "<div id='rewards-wrapper' class='scroll-wrapper'><div class='scroller'></div></div>"
-      @$("#rewards-wrapper .scroller").html require('views/rewards/list_item')(Reward.all())
-      new iScroll('rewards-wrapper')
+      @log 'rewards list is active'
+      @log 'render rewards list'
+      if Reward.count()==0
+        @html "<div class='empty_info'>You have no rewards</div>"
+        if !@loading?
+          @refresh()
+      else
+        @loading = false
+        @rendered = true
+        @html "<div id='rewards-wrapper' class='scroll-wrapper'><div class='scroller'></div></div>"
+        @$("#rewards-wrapper .scroller").html require('views/rewards/list_item')(Reward.all())
+        new iScroll('rewards-wrapper')
   refresh:=>
-    @loaded = true
+    @loading = true
+    @rendered = false
     @html "<div class='loading'>Loading Rewards....</div>"
     Reward.fetch({error:@render_login})
+
+  shit_show_reward:(e)=>
+    @navigate('/show_reward',33,trans:'right')
 
   onLocationChange:(loc)=>
     @log loc
