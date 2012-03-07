@@ -1,0 +1,3 @@
+<div class='reward_show'>
+  <%= @name%>
+</div>
