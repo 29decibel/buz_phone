@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04E45EFA150754C200B6C841 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E45EF9150754C200B6C841 /* PushNotification.m */; };
 		D02A765F14A1C3C7000FC3E4 /* ChildBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D02A765914A1C3C7000FC3E4 /* ChildBrowser.bundle */; };
 		D02A766014A1C3C7000FC3E4 /* ChildBrowserCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = D02A765B14A1C3C7000FC3E4 /* ChildBrowserCommand.m */; };
 		D02A766114A1C3C7000FC3E4 /* ChildBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02A765D14A1C3C7000FC3E4 /* ChildBrowserViewController.m */; };
@@ -43,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04E45EF8150754C200B6C841 /* PushNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PushNotification.h; path = Plugins/PushNotification.h; sourceTree = "<group>"; };
+		04E45EF9150754C200B6C841 /* PushNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PushNotification.m; path = Plugins/PushNotification.m; sourceTree = "<group>"; };
 		D02A765914A1C3C7000FC3E4 /* ChildBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChildBrowser.bundle; sourceTree = "<group>"; };
 		D02A765A14A1C3C7000FC3E4 /* ChildBrowserCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildBrowserCommand.h; sourceTree = "<group>"; };
 		D02A765B14A1C3C7000FC3E4 /* ChildBrowserCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildBrowserCommand.m; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 		D0B6FBA7149F1A5C00B06A26 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				04E45EF8150754C200B6C841 /* PushNotification.h */,
+				04E45EF9150754C200B6C841 /* PushNotification.m */,
 				D02A765814A1C3C7000FC3E4 /* ChildBrowser */,
 				D0B6FBA8149F1A5C00B06A26 /* README */,
 			);
@@ -289,6 +294,7 @@
 		D0B6FB55149F1A5B00B06A26 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = mac;
 			};
 			buildConfigurationList = D0B6FB58149F1A5B00B06A26 /* Build configuration list for PBXProject "buz_phone" */;
@@ -359,6 +365,7 @@
 				D0B6FBA6149F1A5C00B06A26 /* AppDelegate.m in Sources */,
 				D02A766014A1C3C7000FC3E4 /* ChildBrowserCommand.m in Sources */,
 				D02A766114A1C3C7000FC3E4 /* ChildBrowserViewController.m in Sources */,
+				04E45EFA150754C200B6C841 /* PushNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,8 +413,8 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: Lorcan McNeela (V9ERHM642B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lorcan McNeela (V9ERHM642B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -416,8 +423,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PROVISIONING_PROFILE = "5FCDD78B-74E5-437F-83B5-D97937748BCA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5FCDD78B-74E5-437F-83B5-D97937748BCA";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -429,15 +436,15 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: Lorcan McNeela (V9ERHM642B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lorcan McNeela (V9ERHM642B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PROVISIONING_PROFILE = "5FCDD78B-74E5-437F-83B5-D97937748BCA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5FCDD78B-74E5-437F-83B5-D97937748BCA";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -446,12 +453,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = /Users/Shared/PhoneGap/Frameworks;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "buz_phone/buz_phone-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "PHONEGAP_FRAMEWORK=YES";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "buz_phone/buz_phone-Info.plist";
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -464,6 +474,8 @@
 					/usr/lib/libSystem.B.dylib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -473,12 +485,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = /Users/Shared/PhoneGap/Frameworks;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "buz_phone/buz_phone-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "PHONEGAP_FRAMEWORK=YES";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "buz_phone/buz_phone-Info.plist";
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -491,6 +506,8 @@
 					/usr/lib/libSystem.B.dylib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

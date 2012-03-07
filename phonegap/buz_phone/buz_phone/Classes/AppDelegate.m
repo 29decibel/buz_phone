@@ -13,10 +13,27 @@
 	#import "PhoneGapViewController.h"
 #endif
 
+#import "PushNotification.h"
+
+/***************************************************************************************************
+ * URBAN AIRSHIP INTEGRATION
+ *
+ * 1) Fill in your app key and secret below
+ * 2) Include PushNotification.js in your WWW folder (check the comments for usage)
+ * 3) Add PushNotification.h/m in the Plugins folder
+ * 4) Add key "pushnotification" and value "PushNotification" (case-sensitive) to the plugins
+ *    list in PhoneGap.plist
+ * 5) Include the sample index.html or just the parts you want
+ *
+ **************************************************************************************************/
+#define UA_HOST   @"https://go.urbanairship.com/"
+#define UA_KEY    @"9kuKDWkpRbWopix7ZLfdPg"
+#define UA_SECRET @"SmxPyoOKS8eiYK64jv0I_g"
 
 @implementation AppDelegate
 
 @synthesize invokeString;
+@synthesize launchNotification;
 
 - (id) init
 {	
@@ -40,6 +57,9 @@
 		NSLog(@"buz_phone launchOptions = %@",url);
 	}
 	
+    self.launchNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    application.applicationIconBadgeNumber = 0;
+    
 	return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
@@ -108,7 +128,56 @@
 
 - (void)dealloc
 {
+    launchNotification = nil;
 	[ super dealloc ];
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    PushNotification *pushHandler = [self getCommandInstance:@"PushNotification"];
+    [pushHandler didRegisterForRemoteNotificationsWithDeviceToken:deviceToken host:UA_HOST appKey:UA_KEY appSecret:UA_SECRET];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    PushNotification *pushHandler = [self getCommandInstance:@"PushNotification"];
+    [pushHandler didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"didReceiveNotification");
+    
+    // Get application state for iOS4.x+ devices, otherwise assume active
+    UIApplicationState appState = UIApplicationStateActive;
+    if ([application respondsToSelector:@selector(applicationState)]) {
+        appState = application.applicationState;
+    }
+    
+    // NOTE this is a 4.x only block -- TODO: add 3.x compatibility
+    if (appState == UIApplicationStateActive) {
+        PushNotification *pushHandler = [self getCommandInstance:@"PushNotification"];
+        pushHandler.notificationMessage = [userInfo objectForKey:@"aps"];
+        [pushHandler notificationReceived];
+    } else {
+        //save it for later
+        self.launchNotification = userInfo;
+    }
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    
+    NSLog(@"active");
+    
+    //zero badge
+    application.applicationIconBadgeNumber = 0;
+    
+    if (![self.webView isLoading] && self.launchNotification) {
+        PushNotification *pushHandler = [self getCommandInstance:@"PushNotification"];
+        pushHandler.notificationMessage = [self.launchNotification objectForKey:@"aps"];
+        
+        self.launchNotification = nil;
+        
+        [pushHandler performSelectorOnMainThread:@selector(notificationReceived) withObject:pushHandler waitUntilDone:NO];
+    }
+    
+    [super applicationDidBecomeActive:application];
+}
 @end
