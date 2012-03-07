@@ -18,9 +18,9 @@ class App extends Stage.Global
     $('.stage>footer .buttons').append("<button class='rewards btn'>Rewards</button>")
     #@change_count = 0
   events:
-    'tap .orders' : 'orders'
-    'tap .rewards' : 'rewards'
-    'tap .offers' : 'offers'
+    'tap button.orders' : 'orders'
+    'tap button.rewards' : 'rewards'
+    'tap button.offers' : 'offers'
 
   orders:->
     @navigate('/orders')
