@@ -9,7 +9,7 @@ class Rewards extends Panel
   title:'Rewards'
   events:
     'tap .buz_login' : 'login'
-    'tap .reward_item' : 'shit_show_reward'
+    'tap .reward_item' : 'show_reward'
   constructor:->
     super
     Reward.bind('refresh',@render)
@@ -46,8 +46,9 @@ class Rewards extends Panel
     @html "<div class='loading'>Loading Rewards....</div>"
     Reward.fetch({error:@render_login})
 
-  shit_show_reward:(e)=>
-    @navigate('/show_reward',33,trans:'right')
+  show_reward:(e)=>
+    reward = $(e.target).closest('.reward_item').item()
+    @navigate('/show_reward',reward.id,trans:'right')
 
   onLocationChange:(loc)=>
     @log loc

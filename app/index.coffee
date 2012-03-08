@@ -3,7 +3,9 @@ $ = jQuery
 Spine   = require('spine')
 {Stage} = require('spine.mobile')
 MainController = require('controllers/main')
+Reward         = require('models/reward')
 config = require('lib/config')
+BuzUtil = require('lib/buz_util')
 
 class App extends Stage.Global
   constructor: ->
@@ -17,6 +19,30 @@ class App extends Stage.Global
     $('.stage>footer .buttons').append("<button class='orders btn'>Purchases</button>")
     $('.stage>footer .buttons').append("<button class='rewards btn'>Rewards</button>")
     #@change_count = 0
+    # check the newly rewards 
+    window.r = Reward
+    if PhoneGap.available
+      @check_rewards()
+    else
+      document.addEventListener "deviceready",@check_rewards,false
+  # fire reward fetch
+  # bind success to navigator
+  check_rewards:=>
+    self = this
+    Reward.bind('refresh',->
+      new_r = Reward.select (r)->
+        !r.viewed
+      if new_r.length>0 and confirm("Got #{new_r.length} new rewards! Check them?")
+        self.navigate('/show_reward',new_r[0].id,trans:'right')
+    )
+    Reward.fetch()
+    # Reward.fetch({success:(rsp)->
+    #   # check if there is
+    #   new_r = _.select rsp,(r)->
+    #     !r.viewed
+    #   if new_r.length>0 and confirm("Got #{new_r.length} new rewards! Check them?")
+    #     self.navigate('/show_reward',new_r[0].id,trans:'right')
+    # })
   events:
     'tap button.orders' : 'orders'
     'tap button.rewards' : 'rewards'

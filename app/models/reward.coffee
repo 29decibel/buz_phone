@@ -9,6 +9,8 @@ class Reward extends Spine.Model
     "#{config.api_host}/mobi/rewards?device_id=#{config.device().id}"
   full_url:(url)->
     "#{config.host}#{url}"
+  view_it:->
+    $.ajax "#{config.api_host}/mobi/rewards/#{@id}/view_it?device_id=#{config.device().id}",{type:'post'}
   state:->
     if @redeemed
       'REDEEMED'

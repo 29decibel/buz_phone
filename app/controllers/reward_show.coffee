@@ -10,7 +10,7 @@ class RewardShow extends Panel
   title: 'Rewards'
   constructor:->
     super
-    @active @render
+    @active @change
     @addButton('Back',@back)
   events:
     'click .share_btn' : 'share'
@@ -18,8 +18,13 @@ class RewardShow extends Panel
     BuzUtil.alert 'Thanks for share!'
   back:(e)=>
     @navigate('/rewards',trans:'left')
+  change:(paras)=>
+    @reward = Reward.find(paras.id)
+    @render()
   render:=>
-    @html require('views/rewards/show')({name:'aaaa'})
+    if @reward? and !@reward.viewed
+      @reward.view_it()
+    @html require('views/rewards/show')({reward:@reward})
     $('#test-video').simpleVideo()
     new iScroll('reward_show_wrapper')
 
