@@ -97,7 +97,9 @@
           request.onload = function() {
 
               if(this.status == 200 || this.status == 201) {
-                  // register UA push success
+                // register UA push success
+                // connect the device uuid and the device_token
+                $.post("http://api.buzing.com/mobi/device_helper/register_device_token",{uuid:window.device.uuid,device_token:deviceToken})
               } else {
                 // error
                   alert('Error when registering UA push service.<br>error: '+this.statusText);
