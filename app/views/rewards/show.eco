@@ -1,3 +1,25 @@
-<div class='reward_show'>
-  <%= @name%>
+<div class='reward_show scroll-wrapper' id='reward_show_wrapper'>
+  <div class='scroller'>
+    <div class='title'>SHOW CASE</div>
+    <div class='subtitle'>CINEMA DE LUX</div>
+    <p>
+      For being a valuable customer 
+      we are offering you two free 
+      passes to see today’s 3pm showing
+      of Ghost Rider: Sprit of 
+      Vengeance!
+
+      All you have to do is share the trialer:
+    </p>
+    <div class='video'>
+      <p>Watch the trailer</p>
+      <video poster="images/poster.png" id="test-video">
+        <source src="trailer_480p.mov" type="video/mp4">
+        <source src="trailer_480p.ogg" type="video/ogg">
+      </video>
+    </div>
+    <div class='actions'>
+      <button class='share_btn'>Share Trailer</button>
+    </div>
+  </div>
 </div>
