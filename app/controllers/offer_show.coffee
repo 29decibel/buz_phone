@@ -2,6 +2,7 @@ Spine            = require('spine')
 {Panel}          = require('spine.mobile')
 Offer         = require('models/offer')
 Checkin       = require('models/checkin')
+BuzUtil = require('lib/buz_util')
 
 class OfferShow extends Panel
   className:'offer_show'
@@ -40,22 +41,22 @@ class OfferShow extends Panel
   checkin:->
     if @$('.checkin').hasClass('ing')
       return
-    share = confirm('Do you also want to share it on Facebook?')
+    #share = confirm('Do you also want to share it on Facebook?')
     checkin = new Checkin({offer_id:@offer.id,confirmed:share})
     toggle_func = @toggle_checkin_btn
     toggle_func()
     checkin.bind 'ajaxSuccess',->
-      alert 'Checkin Success!'
+      BuzUtil.alert 'Checkin Success!'
       toggle_func()
     checkin.bind 'ajaxError',(ck,resp)->
       console.log ck
       console.log resp
       if resp.status==405
-        alert "Checkin Failed,#{resp.responseText}"
+        BuzUtil.alert "Checkin Failed,#{resp.responseText}"
       else if resp.status==401
-        alert 'You have to login facebook before checkin!'
+        BuzUtil.alert 'You have to login facebook before checkin!'
       else
-        alert 'Checkin Failed..'
+        BuzUtil.alert 'Checkin Failed..'
       toggle_func()
     checkin.save()
 

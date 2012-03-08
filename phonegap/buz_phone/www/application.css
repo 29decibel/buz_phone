@@ -455,3 +455,79 @@ body.stage > footer {
   font-size: 20px;
   background-color: #314f85;
 }
+.reward_show .title {
+  font-size: 20px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+.reward_show .subtitle {
+  background-color: #695fac;
+  color: #fff;
+  width: 200px;
+  margin: auto;
+}
+.reward_show p {
+  padding: 0px 20px;
+}
+.reward_show .actions {
+  margin-top: 20px;
+}
+.reward_show video {
+  width: 300px;
+  height: 200px;
+}
+.reward_show .simple-video-wrapper {
+  -moz-box-shadow: 0 5px 15px rgba(0,0,0,0.40);
+  -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.40);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.40);
+  -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.40);
+  -moz-box-shadow: 0 5px 15px rgba(0,0,0,0.40);
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  width: 300px;
+}
+.reward_show .simple-video-overlay {
+  background: rgba(0,0,0,0.40) url("images/button_small.png") 50% 50% no-repeat;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+.share_btn {
+  -moz-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+  -moz-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+  box-shadow: inset 0px 1px 0px 0px #97c4fe;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0));
+  background: -moz-linear-gradient(center top, #3d94f6 5%, #1e62d0 100%);
+  background-color: #3d94f6;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #337fed;
+  display: inline-block;
+  color: #fff;
+  font-family: arial;
+  font-size: 23px;
+  font-weight: bold;
+  padding: 7px 62px;
+  text-decoration: none;
+}
+.share_btn text-shadow:1px1px0px#1570cd:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6));
+  background: -moz-linear-gradient(center top, #1e62d0 5%, #3d94f6 100%);
+  background-color: #1e62d0;
+}
+.share_btn text-shadow:1px1px0px#1570cd:active {
+  position: relative;
+  top: 1px;
+}

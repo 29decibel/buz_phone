@@ -3,6 +3,7 @@ Spine            = require('spine')
 Reward         = require('models/reward')
 $     = jQuery
 require('lib/jquery.simplevideo')
+BuzUtil = require('lib/buz_util')
 
 class RewardShow extends Panel
   className: 'reward_show'
@@ -12,9 +13,9 @@ class RewardShow extends Panel
     @active @render
     @addButton('Back',@back)
   events:
-    'tap .share_btn' : 'share'
+    'click .share_btn' : 'share'
   share:(e)=>
-    alert 'Thanks for share!'
+    BuzUtil.alert 'Thanks for share!'
   back:(e)=>
     @navigate('/rewards',trans:'left')
   render:=>
