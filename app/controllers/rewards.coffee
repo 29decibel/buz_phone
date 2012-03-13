@@ -13,23 +13,14 @@ class Rewards extends Panel
   constructor:->
     super
     Reward.bind('refresh',@render)
-    Reward.bind('refresh',@shit)
-    @active @shit_render
     @active @render
     @addButton('Refresh',@refresh)
-  shit:=>
-    @log "shit refresh"
-  shit_render:=>
-    @log "shit render"
   render:(e)=>
-    @log e
-    @log "#{e} trigger the render event"
-    return if @rendered
     if @isActive()
       $('.stage>footer .buttons .btn').removeClass('active')
       $('.stage>footer .buttons .rewards').addClass('active')
-      @log 'rewards list is active'
-      @log 'render rewards list'
+    return if @rendered
+    if @isActive()
       if Reward.count()==0
         @html "<div class='empty_info'>You have no rewards</div>"
         if !@loading?

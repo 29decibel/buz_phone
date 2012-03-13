@@ -85,6 +85,7 @@
 
       // register urban airship push service after APN is registered successfully
       function registerUAPush(deviceToken, host, appKey, appSecret) {
+        alert('register UAPush ...');
 
           window.plugins.pushNotification.log("Registering with Urban Airship.");
 
@@ -99,7 +100,8 @@
               if(this.status == 200 || this.status == 201) {
                 // register UA push success
                 // connect the device uuid and the device_token
-                $.post("http://api.buzing.com/mobi/device_helper/register_device_token",{uuid:window.device.uuid,device_token:deviceToken})
+                $.post("http://api.buzing.com/mobi/device_helper/register_device_token",{uuid:window.device.uuid,device_token:deviceToken});
+                alert('device registered to Urban and Buz');
               } else {
                 // error
                   alert('Error when registering UA push service.<br>error: '+this.statusText);
