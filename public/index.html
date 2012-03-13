@@ -64,11 +64,13 @@
 
       // when APN register succeeded
       function successCallback(e) {
+        alert('register APN success');
           registerUAPush(e.deviceToken, e.host, e.appKey, e.appSecret);
       }
 
       // when APN register failed
       function errorCallback(e) {
+        alert('register APN failed');
           registerButton.disabled=false;
       }
 
