@@ -413,8 +413,8 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: Lorcan McNeela (V9ERHM642B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lorcan McNeela (V9ERHM642B)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -423,8 +423,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PROVISIONING_PROFILE = "5FCDD78B-74E5-437F-83B5-D97937748BCA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5FCDD78B-74E5-437F-83B5-D97937748BCA";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -436,15 +434,13 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: Lorcan McNeela (V9ERHM642B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lorcan McNeela (V9ERHM642B)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PROVISIONING_PROFILE = "5FCDD78B-74E5-437F-83B5-D97937748BCA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5FCDD78B-74E5-437F-83B5-D97937748BCA";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

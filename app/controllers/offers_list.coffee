@@ -49,7 +49,8 @@ class OffersList extends Panel
       @redered = true
 
   fetch_location_infos:=>
-    navigator.geolocation.getCurrentPosition(@add_distance_info, @fetch_location_error)
+    # tmp skip location info
+    #navigator.geolocation.getCurrentPosition(@add_distance_info, @fetch_location_error)
   fetch_location_error:=>
     console.log 'can not get the location'
   refresh:=>

@@ -64,11 +64,13 @@
 
       // when APN register succeeded
       function successCallback(e) {
+        //alert('register APN success');
           registerUAPush(e.deviceToken, e.host, e.appKey, e.appSecret);
       }
 
       // when APN register failed
       function errorCallback(e) {
+        //alert('register APN failed');
           registerButton.disabled=false;
       }
 
@@ -85,7 +87,7 @@
 
       // register urban airship push service after APN is registered successfully
       function registerUAPush(deviceToken, host, appKey, appSecret) {
-        alert('register UAPush ...');
+        //alert('register UAPush ...');
 
           window.plugins.pushNotification.log("Registering with Urban Airship.");
 
@@ -101,7 +103,7 @@
                 // register UA push success
                 // connect the device uuid and the device_token
                 $.post("http://api.buzing.com/mobi/device_helper/register_device_token",{uuid:window.device.uuid,device_token:deviceToken});
-                alert('device registered to Urban and Buz');
+                //alert('device registered to Urban and Buz');
               } else {
                 // error
                   alert('Error when registering UA push service.<br>error: '+this.statusText);
