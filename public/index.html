@@ -18,6 +18,7 @@
     jQuery(function(){
       var App = require("index");
       exports.app = new App({el: $("body")});      
+      window.buz_app = exports.app;
       $('header').live('touchmove',function(e){
         e.preventDefault();
       });
@@ -61,8 +62,10 @@
           }
           message.innerHTML='notification received:<br><br>' + msg;
           //set notification to window
-          window.buz_notification = notification;
-          alert('receive notification from URBAN...');
+          if(window.buz_app)
+          {
+            window.buz_app.receive_notification(notification);
+          }
       };
 
       // when APN register succeeded
