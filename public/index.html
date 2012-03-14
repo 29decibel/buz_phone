@@ -60,7 +60,6 @@
           for (var property in notification) {
               msg += property + ' : ' + notification[property] + '<br>';
           }
-          message.innerHTML='notification received:<br><br>' + msg;
           //set notification to window
           window.plugins.pushNotification.log("check the buz_app var");
           if(window.buz_app)
