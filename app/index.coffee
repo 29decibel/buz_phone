@@ -29,7 +29,7 @@ class App extends Stage.Global
     @check_rewards()
     document.addEventListener("resume", @app_resume, false)
 
-  app_resume:(e)->
+  app_resume:(e)=>
     #BuzUtil.alert 'resume'
     console.log 'app resume------'
     console.log e
@@ -37,6 +37,7 @@ class App extends Stage.Global
       console.log window.notification
       BuzUtil.alert 'I guess you just received notification'
       window.buz_notification = null
+      @navigate('/orders')
   # fire reward fetch
   # bind success to navigator
   check_rewards:=>
