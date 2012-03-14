@@ -33,6 +33,7 @@ class App extends Stage.Global
     #BuzUtil.alert 'resume'
     console.log 'app resume------'
     console.log e
+    alert 'app resumed.. check notification info.'
     if window.buz_notification
       console.log window.notification
       BuzUtil.alert 'I guess you just received notification'
