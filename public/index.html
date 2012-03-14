@@ -56,10 +56,10 @@
       // Customized callback for receiving notification
       PushNotification.prototype.notificationCallback = function (notification) {
           window.plugins.pushNotification.log("Received a notification.");
-          var msg = '';
-          for (var property in notification) {
-              msg += property + ' : ' + notification[property] + '<br>';
-          }
+          // var msg = '';
+          // for (var property in notification) {
+          //     msg += property + ' : ' + notification[property] + '<br>';
+          // }
           //set notification to window
           window.plugins.pushNotification.log("check the buz_app var");
           if(window.buz_app)

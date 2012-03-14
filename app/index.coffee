@@ -36,7 +36,7 @@ class App extends Stage.Global
 
   receive_notification:(notification)->
     console.log notification
-    BuzUtil.alert 'I guess you just received notification'
+    #BuzUtil.alert 'I guess you just received notification'
     @navigate('/orders')
   # fire reward fetch
   # bind success to navigator
