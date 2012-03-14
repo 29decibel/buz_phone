@@ -22,6 +22,9 @@ class RewardShow extends Panel
     @reward = Reward.find(paras.id)
     @render()
   render:=>
+    if @isActive()
+      $('.stage>footer .buttons .btn').removeClass('active')
+      $('.stage>footer .buttons .rewards').addClass('active')
     if @reward? and !@reward.viewed
       @reward.view_it()
     @html require('views/rewards/show')({reward:@reward})

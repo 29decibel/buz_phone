@@ -32,8 +32,11 @@ class App extends Stage.Global
     Reward.bind('refresh',->
       new_r = Reward.select (r)->
         !r.viewed
-      if new_r.length>0 and confirm("Got #{new_r.length} new rewards! Check them?")
-        self.navigate('/show_reward',new_r[0].id,trans:'right')
+      if new_r.length > 0
+        BuzUtil.confirm "Got #{new_r.length} new rewards! Check them?",(e)->
+          if e
+            console.log "confirm result #{e}"
+            self.navigate('/show_reward',new_r[0].id,trans:'right')
     )
     Reward.fetch()
     # Reward.fetch({success:(rsp)->

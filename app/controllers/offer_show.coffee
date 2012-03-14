@@ -41,24 +41,26 @@ class OfferShow extends Panel
   checkin:->
     if @$('.checkin').hasClass('ing')
       return
-    #share = confirm('Do you also want to share it on Facebook?')
-    checkin = new Checkin({offer_id:@offer.id,confirmed:share})
     toggle_func = @toggle_checkin_btn
-    toggle_func()
-    checkin.bind 'ajaxSuccess',->
-      BuzUtil.alert 'Checkin Success!'
+    current_offer = @offer
+    BuzUtil.confirm 'Do you also want to share it on Facebook?',(e)->
+      console.log "confirm result #{e}"
+      checkin = new Checkin({offer_id:current_offer.id,confirmed:e})
       toggle_func()
-    checkin.bind 'ajaxError',(ck,resp)->
-      console.log ck
-      console.log resp
-      if resp.status==405
-        BuzUtil.alert "Checkin Failed,#{resp.responseText}"
-      else if resp.status==401
-        BuzUtil.alert 'You have to login facebook before checkin!'
-      else
-        BuzUtil.alert 'Checkin Failed..'
-      toggle_func()
-    checkin.save()
+      checkin.bind 'ajaxSuccess',->
+        BuzUtil.alert 'Checkin Success!'
+        toggle_func()
+      checkin.bind 'ajaxError',(ck,resp)->
+        console.log ck
+        console.log resp
+        if resp.status==405
+          BuzUtil.alert "Checkin Failed,#{resp.responseText}"
+        else if resp.status==401
+          BuzUtil.alert 'You have to login facebook before checkin!'
+        else
+          BuzUtil.alert 'Checkin Failed..'
+        toggle_func()
+      checkin.save()
 
   back:->
     @navigate('/offers_list',trans:'left')
