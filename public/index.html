@@ -62,10 +62,13 @@
           }
           message.innerHTML='notification received:<br><br>' + msg;
           //set notification to window
+          window.plugins.pushNotification.log("check the buz_app var");
           if(window.buz_app)
           {
+            window.plugins.pushNotification.log("invoke receive_notification at buz_app");
             window.buz_app.receive_notification(notification);
           }
+          window.plugins.pushNotification.log("==========checked===========");
       };
 
       // when APN register succeeded

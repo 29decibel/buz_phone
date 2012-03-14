@@ -32,7 +32,7 @@ class App extends Stage.Global
 
   app_resume:(e)=>
     #BuzUtil.alert 'resume'
-    console.log 'app resume------'
+    console.log 'app resume------mike v1'
 
   receive_notification:(notification)->
     console.log notification
