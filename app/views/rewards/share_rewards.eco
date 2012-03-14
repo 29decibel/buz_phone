@@ -1,0 +1,12 @@
+<div class='head-section'>
+  View rewards history
+</div>
+<ul>
+  <li>
+    <img src='images/tick_icon.png'></img>
+    <span>
+      Free Movie Passes
+      <a href='#' class='redeem'>Click to redeem</a>
+    </span>
+  </li>
+</ul>

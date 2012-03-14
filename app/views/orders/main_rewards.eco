@@ -1,0 +1,17 @@
+<div class='head-section'>
+  About <a href='#'>Showcase Cinema De Lux,Legacy Place</a>
+</div>
+<ul>
+  <li>
+    <img src="images/twitter_btn.jpg"></img>
+    <span>100 Reward points</span>
+  </li>
+  <li>
+    <img src="images/facebook_btn.jpg"></img>
+    <span>$5 Giftcard</span>
+  </li>
+  <li>
+    <img src="images/youtube_btn.png"></img>
+    <span>2 Free movie passes</span>
+  </li>
+</ul>

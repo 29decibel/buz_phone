@@ -16,15 +16,27 @@ class App extends Stage.Global
     @navigate '/offers_list'
     $('.stage>footer').append("<div class='buttons'></div>")
     $('.stage>footer .buttons').append("<button class='offers btn'>Offers</button>")
-    $('.stage>footer .buttons').append("<button class='orders btn'>Purchases</button>")
+    $('.stage>footer .buttons').append("<button class='orders btn'>Stores</button>")
     $('.stage>footer .buttons').append("<button class='rewards btn'>Rewards</button>")
     #@change_count = 0
     # check the newly rewards 
-    window.r = Reward
     if PhoneGap.available
-      @check_rewards()
+      @run_when_device_ready()
     else
-      document.addEventListener "deviceready",@check_rewards,false
+      document.addEventListener "deviceready",@run_when_device_ready,false
+
+  run_when_device_ready:=>
+    @check_rewards()
+    document.addEventListener("resume", @app_resume, false)
+
+  app_resume:(e)->
+    #BuzUtil.alert 'resume'
+    console.log 'app resume------'
+    console.log e
+    if window.buz_notification
+      console.log window.notification
+      BuzUtil.alert 'I guess you just received notification'
+      window.buz_notification = null
   # fire reward fetch
   # bind success to navigator
   check_rewards:=>

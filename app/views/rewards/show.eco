@@ -14,7 +14,7 @@
     <div class='video'>
       <p>Watch the trailer</p>
       <video poster="images/poster.png" id="test-video">
-        <source src="trailer_480p.mp4" type="video/mp4">
+        <source src="http://dl.dropbox.com/u/3485644/buz_video.mp4" type="video/mp4">
       </video>
     </div>
     <div class='actions'>
