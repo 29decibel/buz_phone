@@ -26,6 +26,7 @@ class App extends Stage.Global
       document.addEventListener "deviceready",@run_when_device_ready,false
 
   run_when_device_ready:=>
+    console.log 'device ready`````````````````'
     @check_rewards()
     document.addEventListener("resume", @app_resume, false)
 
@@ -33,7 +34,6 @@ class App extends Stage.Global
     #BuzUtil.alert 'resume'
     console.log 'app resume------'
     console.log e
-    alert 'app resumed.. check notification info.'
     if window.buz_notification
       console.log window.notification
       BuzUtil.alert 'I guess you just received notification'
