@@ -15,7 +15,8 @@ class RewardShow extends Panel
   events:
     'click .share_btn' : 'share'
   share:(e)=>
-    BuzUtil.alert 'Thanks for share!'
+    #BuzUtil.alert 'Thanks for share!'
+    @navigate('/share_rewards',trans:'right')
   back:(e)=>
     @navigate('/rewards',trans:'left')
   change:(paras)=>
@@ -27,7 +28,7 @@ class RewardShow extends Panel
       $('.stage>footer .buttons .rewards').addClass('active')
     if @reward? and !@reward.viewed
       @reward.view_it()
-    @html require('views/rewards/show')({reward:@reward})
+    @html require('views/rewards/show2')({reward:@reward})
     $('#test-video').simpleVideo()
     new iScroll('reward_show_wrapper')
 

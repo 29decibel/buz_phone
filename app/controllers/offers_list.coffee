@@ -3,6 +3,7 @@ Spine            = require('spine')
 Offer         = require('models/offer')
 config = require('lib/config')
 $     = jQuery
+BuzUtil = require('lib/buz_util')
 
 class OffersList extends Panel
   className:'offer_list'
@@ -12,7 +13,8 @@ class OffersList extends Panel
     super
     Offer.bind('refresh change', @render)
     @active @render
-    @addButton('Refresh',@refresh)
+    @addButton('Logout',@logout)
+    #@addButton('Refresh',@refresh)
     @addButton('Map View',@map_view).addClass('right')
   events:
     'tap .item' : 'show_offer'
@@ -23,6 +25,10 @@ class OffersList extends Panel
     @navigate('/show_offer',offer.id,trans:'right')
   map_view:=>
     @navigate('/offers_map')
+  logout:=>
+    $.post "#{config.api_host}/mobi/device_helper/unlink_user_with_device",{uuid:config.device().id},(rsp)->
+      BuzUtil.alert "Success"
+      console.log rsp
   render:=>
     if @isActive()
       $('.stage>footer .buttons .btn').removeClass('active')

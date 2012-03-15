@@ -461,6 +461,9 @@ body.stage > footer {
   font-size: 20px;
   background-color: #314f85;
 }
+.reward_show .terms {
+  padding: 20px;
+}
 .reward_show .title {
   font-size: 20px;
   margin: auto;

@@ -1,0 +1,16 @@
+<div class='reward_show scroll-wrapper' id='reward_show_wrapper'>
+  <div class='scroller'>
+    <div class='terms'>Offer terms and conditions</div>
+    <div class='video'>
+      <video poster="images/poster.png" id="test-video">
+        <source src="http://asset.buzing.com/buz_video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p>
+      Click share to unlock 2 passes to <br/><strong>21 Jump St.</strong>
+    </p>
+    <div class='actions'>
+      <button class='share_btn'>Share Trailer</button>
+    </div>
+  </div>
+</div>
