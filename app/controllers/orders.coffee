@@ -6,7 +6,7 @@ $     = jQuery
 
 class Orders extends Panel
   className:'orders'
-  title:'Purchases'
+  title:'SHOWCASE CINEMA DE LUX'
   events:
     'tap .buz_login' : 'login'
   constructor:->

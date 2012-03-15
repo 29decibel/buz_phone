@@ -7,7 +7,7 @@ BuzUtil = require('lib/buz_util')
 
 class MainRewards extends Panel
   className: 'main_rewards'
-  title: 'Rewards'
+  title:"<p class='small right'>SHOWCASE CINEMA DE LUX</p>"
   constructor:->
     super
     @active @change

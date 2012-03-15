@@ -107,6 +107,13 @@ body.stage > footer {
   left: auto;
   right: 0;
 }
+header .small {
+  font-size: 15px;
+  font-weight: bold;
+}
+header .small.right {
+  margin-left: 30px;
+}
 .offer_list .item {
   position: relative;
   width: 95%;
