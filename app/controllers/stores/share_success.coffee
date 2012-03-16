@@ -13,6 +13,8 @@ class ShareSuccess extends Panel
     super
     @active @change
     @addButton('Back',@back)
+  events:
+    'click .share_btn' : 'back'
   back:(e)=>
     @navigate('/orders',trans:'left')
   change:(paras)=>

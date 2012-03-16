@@ -612,3 +612,9 @@ header .small.right {
 .friends_list ul li.selected {
   border: 1px solid #008000;
 }
+.share_success .back_home {
+  position: absolute;
+  top: 170px;
+  width: 90%;
+  margin: 50px 5%;
+}
