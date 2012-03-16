@@ -1,0 +1,15 @@
+<div class='scroll-wrapper' id='friends_list_wrapper'>
+  <% if @friends: %>
+    <ul class='scroller'>
+      <% for friend in @friends:%>
+        <li class='fb_friend'>
+          <img src='<%= friend.avatar%>'></img>
+          <span><%= friend.name%></span>
+        </li>
+      <% end %>
+      <button class='share_btn'>Send Gift Voucher Now</button>
+    </ul>
+  <% else :%>
+    <div class='loading'>Loading your facebook friends...</div>
+  <% end %>
+</div>

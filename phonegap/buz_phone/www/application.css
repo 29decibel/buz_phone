@@ -597,3 +597,18 @@ header .small.right {
 .share_rewards ul li span a {
   display: block;
 }
+.friends_list ul {
+  padding: 10px;
+  padding-top: 0px;
+  list-style: none;
+}
+.friends_list ul li {
+  padding: 3px;
+  min-height: 55px;
+  border: 1px solid #fff;
+  text-align: left;
+  margin-top: 4px;
+}
+.friends_list ul li.selected {
+  border: 1px solid #008000;
+}

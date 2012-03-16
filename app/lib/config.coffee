@@ -3,6 +3,7 @@ BuzConfig =
   #api_host:'http://api.buz.dev'
   host    :'http://buzing.com'
   api_host:'http://api.buzing.com'
+  facebook_api_key: '257973420916663'
   position:{}
   device:->
     if window.device?

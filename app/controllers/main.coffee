@@ -9,6 +9,9 @@ Reward = require('models/reward')
 # new added
 MainRewards = require('controllers/main_rewards')
 ShareRewards = require('controllers/share_rewards')
+ShareRewards = require('controllers/share_rewards')
+FriendsList = require('controllers/stores/friends_list')
+ShareSuccess = require('controllers/stores/share_success')
 
 class MainController extends Spine.Controller
   constructor: ->
@@ -22,6 +25,8 @@ class MainController extends Spine.Controller
     # new one
     @share_rewards = new ShareRewards
     @main_rewards = new MainRewards
+    @friends_list = new FriendsList
+    @share_success = new ShareSuccess
     @routes
       '/offers_list'        : (params)->@offers_list.active(params)
       '/offers_map'         : (params)->@offers_map.active(params)
@@ -30,5 +35,7 @@ class MainController extends Spine.Controller
       '/orders'             : (params)->@main_rewards.active(params)
       '/rewards'            : (params)->@rewards.active(params)
       '/share_rewards'            : (params)->@share_rewards.active(params)
+      '/friends_list'            : (params)->@friends_list.active(params)
+      '/share_success'            : (params)->@share_success.active(params)
 
 module.exports = MainController

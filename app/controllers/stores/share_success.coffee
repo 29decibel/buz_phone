@@ -6,25 +6,21 @@ require('lib/jquery.simplevideo')
 BuzUtil = require('lib/buz_util')
 config = require('lib/config')
 
-class MainRewards extends Panel
-  className: 'main_rewards'
+class ShareSuccess extends Panel
+  className: 'share_success'
   title:"<p class='small right'>SHOWCASE CINEMA DE LUX</p>"
   constructor:->
     super
     @active @change
     @addButton('Back',@back)
-  events:
-    'click li' : 'share'
-  share:(e)=>
-    @navigate('/friends_list',trans:'right')
   back:(e)=>
-    @navigate('/rewards',trans:'left')
+    @navigate('/orders',trans:'left')
   change:(paras)=>
     @render()
   render:=>
     if @isActive()
       $('.stage>footer .buttons .btn').removeClass('active')
       $('.stage>footer .buttons .orders').addClass('active')
-    @html require('views/orders/main_rewards')()
+    @html require('views/orders/share_success')()
 
-module.exports = MainRewards
+module.exports = ShareSuccess
